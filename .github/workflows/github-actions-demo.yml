@@ -15,8 +15,5 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - name: Sleep
-      - run: sleep 15s
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: echo "Completed all events"
 
