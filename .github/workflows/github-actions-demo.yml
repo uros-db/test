@@ -1,6 +1,7 @@
 name: Build and test
 
 on:
+  push:
   pull_request_target:
     branches: [master]
   workflow_call:
@@ -18,7 +19,7 @@ on:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.ref != 'refs/heads/master' && !startsWith(github.ref, 'refs/heads/branch-') }}
 
 jobs:
   Explore-gitHub-actions:
