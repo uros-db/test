@@ -13,9 +13,8 @@ jobs:
     steps:
       - name: Testing this BS
         run: | 
+          echo "VALUE ISSS: ${{ github.ref != 'refs/heads/master' && !startsWith(github.ref, 'refs/heads/branch-') }}"
           echo "name is ${{ github.event_name }} obj is ${{github.event.pull_request}}"
           echo "Condition head ref is ${{ contains(github.event_name, 'pull_request') }}"
-      - name: Sleep a bit
-        run: sleep 200s
       - name: Write end message
         run: echo "Concurrency group ${{ github.workflow }}-${{ github.ref || github.run_id }}"
