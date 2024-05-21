@@ -24,9 +24,7 @@ jobs:
   Explore-gitHub-actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Head ref is ${{ github.head_ref || "" }} and ref is: ${{ github.ref }}"
-      - run: echo "Condition head ref is ${{ github.head_ref != ''}}"
-      - name: Check out repository code
+      - run: echo "Condition head ref is ${{ contains(github.event_name, 'pull_request') }}"
       - name: Sleep a bit
         run: sleep 200s
       - name: Write end message
