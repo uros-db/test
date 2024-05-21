@@ -18,13 +18,8 @@ on:
         default: master
 
 concurrency:
-<<<<<<< Updated upstream
-  group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
-  cancel-in-progress: ${{ github.ref != 'refs/heads/master' && !startsWith(github.ref, 'refs/heads/branch-') }}
-=======
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
->>>>>>> Stashed changes
 
 jobs:
   Explore-gitHub-actions:
