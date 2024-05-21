@@ -23,5 +23,4 @@ jobs:
         run: sleep 200s
       - name: Write end message
         run: echo "Concurrency group ${{ github.workflow }}-${{ github.ref || github.run_id }}"
-        run: echo "🍏 This job's status is ${{ job.status }}."
 
