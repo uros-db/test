@@ -24,7 +24,7 @@ jobs:
   Explore-gitHub-actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Head ref is ${{ github.head_ref }} and ref is: ${{ github.ref }}"
+      - run: echo "Head ref is ${{ github.head_ref || "" }} and ref is: ${{ github.ref }}"
       - run: echo "Condition head ref is ${{ github.head_ref != ''}}"
       - name: Check out repository code
       - name: Sleep a bit
