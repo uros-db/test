@@ -13,6 +13,7 @@ jobs:
     steps:
       - name: Testing this BS
         run: | 
+          echo "repo: ${{ github.repository }} owner: ${{ github.repository_owner }}"
           echo "VALUE ISSS: ${{ github.ref != 'refs/heads/master' && !startsWith(github.ref, 'refs/heads/branch-') }}"
           echo "name is ${{ github.event_name }} obj is ${{github.event.pull_request}}"
           echo "Condition head ref is ${{ contains(github.event_name, 'pull_request') }}"
